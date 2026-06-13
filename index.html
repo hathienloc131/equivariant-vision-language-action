@@ -3,11 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -26,8 +21,8 @@
   };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" id="MathJax-script" async></script>
-</helmet>
-
+</head>
+<body>
 <div style="font-family: 'Inter', system-ui, sans-serif; color: #1a1d24; background: #ffffff; line-height: 1.65; -webkit-font-smoothing: antialiased;">
 
   <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; background: rgba(255,255,255,0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #ececf0;">
@@ -35,7 +30,6 @@
     <div style="display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 500;">
       <a href="#abstract" style="color: #5b6170; text-decoration: none;">Abstract</a>
       <a href="#method" style="color: #5b6170; text-decoration: none;">Method</a>
-      <a href="#results" style="color: #5b6170; text-decoration: none;">Results</a>
       <a href="#results" style="color: #5b6170; text-decoration: none;">Results</a>
     </div>
   </nav>
@@ -73,16 +67,6 @@
         <div style="font-size: 13px; color: #6b7180; margin-top: 8px;">Mobile ALOHA real-robot success <span style="color: #1f8a5b; font-weight: 600;">(+18pp)</span></div>
       </div>
     </section>
-
-    <!-- TEASER
-    <figure style="margin: 0 0 64px;">
-      <div style="position: relative; width: 100%; aspect-ratio: 16 / 7; border-radius: 16px; border: 1px dashed #c4cad6; background: repeating-linear-gradient(45deg, #f6f8fb, #f6f8fb 12px, #f1f4f9 12px, #f1f4f9 24px); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: #9aa1b1;">
-        <div style="font-size: 32px;">🖼️</div>
-        <div style="font-size: 14px; font-weight: 600; letter-spacing: 0.02em;">Teaser figure &mdash; 1600 &times; 700</div>
-        <div style="font-size: 12.5px;">EquiVLA's action prediction rotates consistently with the workspace</div>
-      </div>
-      <figcaption style="text-align: center; font-size: 14px; color: #7b8294; margin-top: 14px; max-width: 740px; margin-left: auto; margin-right: auto;"><strong style="color: #4a5060;">Figure 1.</strong> When the workspace is rotated, a standard VLA produces inconsistent actions, while EquiVLA's predictions transform <em>equivariantly</em> &mdash; preserving correct behavior without extra data.</figcaption>
-    </figure> -->
 
     <!-- ABSTRACT -->
     <section id="abstract" style="margin-bottom: 64px; scroll-margin-top: 80px;">
@@ -174,17 +158,87 @@
             </tr>
           </thead>
           <tbody style="font-variant-numeric: tabular-nums;">
-            <sc-for list="{{ liberoRows }}" as="r" hint-placeholder-count="9">
-              <tr style="border-bottom: 1px solid #ececf0; background: {{ r.bg }};">
-                <td style="padding: 10px 12px; color: {{ r.nameColor }}; font-weight: {{ r.weight }};">{{ r.method }}</td>
-                <td style="text-align: center; padding: 10px 8px; color: #8a909e; font-size: 13px;">{{ r.ctrl }}</td>
-                <td style="text-align: center; padding: 10px 8px; color: {{ r.valColor }}; font-weight: {{ r.weight }};">{{ r.l10 }}</td>
-                <td style="text-align: center; padding: 10px 8px; color: {{ r.valColor }}; font-weight: {{ r.weight }};">{{ r.goal }}</td>
-                <td style="text-align: center; padding: 10px 8px; color: {{ r.valColor }}; font-weight: {{ r.weight }};">{{ r.object }}</td>
-                <td style="text-align: center; padding: 10px 8px; color: {{ r.valColor }}; font-weight: {{ r.weight }};">{{ r.spatial }}</td>
-                <td style="text-align: center; padding: 10px 12px; color: {{ r.avgColor }}; font-weight: 700;">{{ r.avg }}</td>
-              </tr>
-            </sc-for>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 10px 12px; color: #4a5060; font-weight: 400;">&#x3C0;&#x2080;</td>
+              <td style="text-align: center; padding: 10px 8px; color: #8a909e; font-size: 13px;">Rel.</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">73.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">93.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">86.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">90.0</td>
+              <td style="text-align: center; padding: 10px 12px; color: #4a5060; font-weight: 700;">86.0</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 10px 12px; color: #4a5060; font-weight: 400;">OpenVLA</td>
+              <td style="text-align: center; padding: 10px 8px; color: #8a909e; font-size: 13px;">Rel.</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">55.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">79.2</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">88.4</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">84.7</td>
+              <td style="text-align: center; padding: 10px 12px; color: #4a5060; font-weight: 700;">76.8</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 10px 12px; color: #4a5060; font-weight: 400;">SmolVLA</td>
+              <td style="text-align: center; padding: 10px 8px; color: #8a909e; font-size: 13px;">Rel.</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">61.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">61.4</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">66.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">74.0</td>
+              <td style="text-align: center; padding: 10px 12px; color: #4a5060; font-weight: 700;">65.6</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 10px 12px; color: #4a5060; font-weight: 400;">GR00T N1.5 (baseline)</td>
+              <td style="text-align: center; padding: 10px 8px; color: #8a909e; font-size: 13px;">Rel.</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">72.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">75.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">83.4</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">82.0</td>
+              <td style="text-align: center; padding: 10px 12px; color: #4a5060; font-weight: 700;">78.1</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 10px 12px; color: #4a5060; font-weight: 400;">GR00T N1.5 + EquiActor</td>
+              <td style="text-align: center; padding: 10px 8px; color: #8a909e; font-size: 13px;">Rel.</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">82.6</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">88.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">95.2</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">98.2</td>
+              <td style="text-align: center; padding: 10px 12px; color: #4a5060; font-weight: 700;">91.0</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: #eef4fe;">
+              <td style="padding: 10px 12px; color: #15171d; font-weight: 700;">EquiVLA (ours)</td>
+              <td style="text-align: center; padding: 10px 8px; color: #8a909e; font-size: 13px;">Rel.</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">87.6</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">89.4</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">98.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">95.4</td>
+              <td style="text-align: center; padding: 10px 12px; color: #2A6FDB; font-weight: 700;">92.6</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 10px 12px; color: #4a5060; font-weight: 400;">GR00T N1.5 (baseline)</td>
+              <td style="text-align: center; padding: 10px 8px; color: #8a909e; font-size: 13px;">Abs.</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">52.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">55.2</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">74.6</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">68.6</td>
+              <td style="text-align: center; padding: 10px 12px; color: #4a5060; font-weight: 700;">62.6</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 10px 12px; color: #4a5060; font-weight: 400;">GR00T N1.5 + EquiActor</td>
+              <td style="text-align: center; padding: 10px 8px; color: #8a909e; font-size: 13px;">Abs.</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">63.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">70.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">79.4</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">82.0</td>
+              <td style="text-align: center; padding: 10px 12px; color: #4a5060; font-weight: 700;">73.6</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: #eef4fe;">
+              <td style="padding: 10px 12px; color: #15171d; font-weight: 700;">EquiVLA (ours)</td>
+              <td style="text-align: center; padding: 10px 8px; color: #8a909e; font-size: 13px;">Abs.</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">73.6</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">70.4</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">83.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">77.6</td>
+              <td style="text-align: center; padding: 10px 12px; color: #2A6FDB; font-weight: 700;">76.1</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -207,17 +261,51 @@
             </tr>
           </thead>
           <tbody style="font-variant-numeric: tabular-nums;">
-            <sc-for list="{{ calvinRows }}" as="r" hint-placeholder-count="5">
-              <tr style="border-bottom: 1px solid #ececf0; background: {{ r.bg }};">
-                <td style="padding: 10px 12px; color: {{ r.nameColor }}; font-weight: {{ r.weight }};">{{ r.method }}</td>
-                <td style="text-align: center; padding: 10px 8px; color: {{ r.valColor }}; font-weight: {{ r.weight }};">{{ r.t1 }}</td>
-                <td style="text-align: center; padding: 10px 8px; color: {{ r.valColor }}; font-weight: {{ r.weight }};">{{ r.t2 }}</td>
-                <td style="text-align: center; padding: 10px 8px; color: {{ r.valColor }}; font-weight: {{ r.weight }};">{{ r.t3 }}</td>
-                <td style="text-align: center; padding: 10px 8px; color: {{ r.valColor }}; font-weight: {{ r.weight }};">{{ r.t4 }}</td>
-                <td style="text-align: center; padding: 10px 8px; color: {{ r.valColor }}; font-weight: {{ r.weight }};">{{ r.t5 }}</td>
-                <td style="text-align: center; padding: 10px 12px; color: {{ r.avgColor }}; font-weight: 700;">{{ r.avg }}</td>
-              </tr>
-            </sc-for>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 10px 12px; color: #4a5060; font-weight: 400;">HULC (multi-frame&dagger;)</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">88.9</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">73.3</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">58.7</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">47.5</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">38.3</td>
+              <td style="text-align: center; padding: 10px 12px; color: #4a5060; font-weight: 700;">3.07</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 10px 12px; color: #4a5060; font-weight: 400;">MoDE (multi-frame&dagger;)</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">97.1</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">92.5</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">87.9</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">83.5</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">77.9</td>
+              <td style="text-align: center; padding: 10px 12px; color: #4a5060; font-weight: 700;">4.39</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 10px 12px; color: #4a5060; font-weight: 400;">GR00T N1.5 (baseline)</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">89.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">79.2</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">68.7</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">59.4</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">48.5</td>
+              <td style="text-align: center; padding: 10px 12px; color: #4a5060; font-weight: 700;">3.45</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 10px 12px; color: #4a5060; font-weight: 400;">GR00T N1.5 + EquiActor</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">93.7</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">85.8</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">77.8</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">70.1</td>
+              <td style="text-align: center; padding: 10px 8px; color: #6b7180; font-weight: 400;">61.9</td>
+              <td style="text-align: center; padding: 10px 12px; color: #4a5060; font-weight: 700;">3.89</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: #eef4fe;">
+              <td style="padding: 10px 12px; color: #15171d; font-weight: 700;">EquiVLA (ours)</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">95.0</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">88.5</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">81.1</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">73.8</td>
+              <td style="text-align: center; padding: 10px 8px; color: #2A6FDB; font-weight: 700;">64.3</td>
+              <td style="text-align: center; padding: 10px 12px; color: #2A6FDB; font-weight: 700;">4.03</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -238,14 +326,42 @@
             </tr>
           </thead>
           <tbody style="font-variant-numeric: tabular-nums;">
-            <sc-for list="{{ realRows }}" as="r" hint-placeholder-count="6">
-              <tr style="border-bottom: {{ r.border }}; background: {{ r.bg }};">
-                <td style="padding: 11px 12px; color: {{ r.nameColor }}; font-weight: {{ r.weight }};">{{ r.task }}</td>
-                <td style="text-align: center; padding: 11px 12px; color: #6b7180;">{{ r.base }}</td>
-                <td style="text-align: center; padding: 11px 12px; color: #2A6FDB; font-weight: {{ r.oursWeight }};">{{ r.ours }}</td>
-                <td style="text-align: center; padding: 11px 12px; color: {{ r.deltaColor }}; font-weight: {{ r.deltaWeight }};">{{ r.delta }}</td>
-              </tr>
-            </sc-for>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 11px 12px; color: #4a5060; font-weight: 400;">Banana in Pot</td>
+              <td style="text-align: center; padding: 11px 12px; color: #6b7180;">12/20 (60%)</td>
+              <td style="text-align: center; padding: 11px 12px; color: #2A6FDB; font-weight: 600;">15/20 (75%)</td>
+              <td style="text-align: center; padding: 11px 12px; color: #1f8a5b; font-weight: 500;">+15pp</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 11px 12px; color: #4a5060; font-weight: 400;">Block Storing</td>
+              <td style="text-align: center; padding: 11px 12px; color: #6b7180;">9/20 (45%)</td>
+              <td style="text-align: center; padding: 11px 12px; color: #2A6FDB; font-weight: 600;">11/20 (55%)</td>
+              <td style="text-align: center; padding: 11px 12px; color: #1f8a5b; font-weight: 500;">+10pp</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 11px 12px; color: #4a5060; font-weight: 400;">House Building</td>
+              <td style="text-align: center; padding: 11px 12px; color: #6b7180;">3/20 (15%)</td>
+              <td style="text-align: center; padding: 11px 12px; color: #2A6FDB; font-weight: 600;">10/20 (50%)</td>
+              <td style="text-align: center; padding: 11px 12px; color: #1f8a5b; font-weight: 700;">+35pp</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 11px 12px; color: #4a5060; font-weight: 400;">Letter Aligning</td>
+              <td style="text-align: center; padding: 11px 12px; color: #6b7180;">13/20 (65%)</td>
+              <td style="text-align: center; padding: 11px 12px; color: #2A6FDB; font-weight: 600;">19/20 (95%)</td>
+              <td style="text-align: center; padding: 11px 12px; color: #1f8a5b; font-weight: 700;">+30pp</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ececf0; background: transparent;">
+              <td style="padding: 11px 12px; color: #4a5060; font-weight: 400;">Shorts Folding</td>
+              <td style="text-align: center; padding: 11px 12px; color: #6b7180;">17/20 (85%)</td>
+              <td style="text-align: center; padding: 11px 12px; color: #2A6FDB; font-weight: 600;">17/20 (85%)</td>
+              <td style="text-align: center; padding: 11px 12px; color: #9aa1b1; font-weight: 500;">0pp</td>
+            </tr>
+            <tr style="border-bottom: 2px solid #2A6FDB; background: #eef4fe;">
+              <td style="padding: 11px 12px; color: #15171d; font-weight: 700;">Average</td>
+              <td style="text-align: center; padding: 11px 12px; color: #6b7180;">54%</td>
+              <td style="text-align: center; padding: 11px 12px; color: #2A6FDB; font-weight: 700;">72%</td>
+              <td style="text-align: center; padding: 11px 12px; color: #1f8a5b; font-weight: 700;">+18pp</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -254,13 +370,9 @@
         <li><strong>Zero cost</strong> when rotational symmetry is absent: Shorts Folding (85% for both), confirming no performance penalty from the equivariant inductive bias.</li>
       </ul>
 
-      <!-- Task images (mirroring paper figure layout) -->
+      <!-- Task images -->
       <figure style="margin: 0 0 36px;">
-
-        <!-- Row 1: Banana in Pot + Block Storing (3 frames each) -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-
-          <!-- Banana in Pot -->
           <div>
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; border-radius: 12px; overflow: hidden;">
               <img src="figures/experiment/1_kitchen_place_banana.jpeg" alt="Banana in Pot — frame 1" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block;">
@@ -272,8 +384,6 @@
               <div style="font-size: 13px; color: #6b7180;"><span style="color: #2A6FDB; font-weight: 600;">75%</span> vs. 60%</div>
             </div>
           </div>
-
-          <!-- Block Storing -->
           <div>
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; border-radius: 12px; overflow: hidden;">
               <img src="figures/experiment/1_drawer_placing.jpeg" alt="Block Storing — frame 1" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block;">
@@ -286,11 +396,7 @@
             </div>
           </div>
         </div>
-
-        <!-- Row 2: House Building + Letter Aligning + Shorts Folding (2 frames each) -->
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
-
-          <!-- House Building -->
           <div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; border-radius: 12px; overflow: hidden;">
               <img src="figures/experiment/1_stack_house.jpeg" alt="House Building — initial" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block;">
@@ -301,8 +407,6 @@
               <div style="font-size: 13px; color: #6b7180;"><span style="color: #2A6FDB; font-weight: 600;">50%</span> vs. 15%</div>
             </div>
           </div>
-
-          <!-- Letter Aligning -->
           <div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; border-radius: 12px; overflow: hidden;">
               <img src="figures/experiment/1_letter_align.jpeg" alt="Letter Aligning — initial" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block;">
@@ -313,8 +417,6 @@
               <div style="font-size: 13px; color: #6b7180;"><span style="color: #2A6FDB; font-weight: 600;">95%</span> vs. 65%</div>
             </div>
           </div>
-
-          <!-- Shorts Folding -->
           <div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; border-radius: 12px; overflow: hidden;">
               <img src="figures/experiment/1_short_folding.jpeg" alt="Shorts Folding — initial" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block;">
@@ -326,7 +428,6 @@
             </div>
           </div>
         </div>
-
         <figcaption style="text-align: center; font-size: 14px; color: #7b8294; margin-top: 18px;"><strong style="color: #4a5060;">Figure 5.</strong> Real-robot tasks on Mobile ALOHA. For each task the first and last frames show the initial and goal states. Success rates: EquiVLA (blue) vs. GR00T N1.5 over 20 trials.</figcaption>
       </figure>
 
@@ -335,38 +436,36 @@
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
         <figure style="margin: 0;">
           <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px dashed #c4cad6; background: #1d2027; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: #6b7180;">
-            <div style="font-size: 22px;">▶</div>
+            <div style="font-size: 22px;">&#9658;</div>
             <div style="font-size: 13px;">Banana in Pot</div>
           </div>
         </figure>
         <figure style="margin: 0;">
           <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px dashed #c4cad6; background: #1d2027; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: #6b7180;">
-            <div style="font-size: 22px;">▶</div>
+            <div style="font-size: 22px;">&#9658;</div>
             <div style="font-size: 13px;">Block Storing</div>
           </div>
         </figure>
         <figure style="margin: 0;">
           <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px dashed #c4cad6; background: #1d2027; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: #6b7180;">
-            <div style="font-size: 22px;">▶</div>
+            <div style="font-size: 22px;">&#9658;</div>
             <div style="font-size: 13px;">House Building</div>
           </div>
         </figure>
         <figure style="margin: 0;">
           <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px dashed #c4cad6; background: #1d2027; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: #6b7180;">
-            <div style="font-size: 22px;">▶</div>
+            <div style="font-size: 22px;">&#9658;</div>
             <div style="font-size: 13px;">Letter Aligning</div>
           </div>
         </figure>
         <figure style="margin: 0; grid-column: 1 / -1; max-width: calc(50% - 8px);">
           <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px dashed #c4cad6; background: #1d2027; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: #6b7180;">
-            <div style="font-size: 22px;">▶</div>
+            <div style="font-size: 22px;">&#9658;</div>
             <div style="font-size: 13px;">Shorts Folding</div>
           </div>
         </figure>
       </div>
     </section>
-
-    <!-- FOOTER -->
 
     <footer style="border-top: 1px solid #ececf0; padding: 36px 0 64px; text-align: center;">
       <p style="font-family: 'Newsreader', serif; font-size: 18px; color: #4a5060; margin: 0 0 6px;">Equi<span style="color: #2A6FDB;">VLA</span></p>
@@ -375,73 +474,5 @@
 
   </div>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  renderVals() {
-    const NEU = { bg: "transparent", nameColor: "#4a5060", valColor: "#6b7180", avgColor: "#4a5060", weight: "400" };
-    const OURS = { bg: "#eef4fe", nameColor: "#15171d", valColor: "#2A6FDB", avgColor: "#2A6FDB", weight: "700" };
-
-    const liberoRows = [
-      { method: "π₀", ctrl: "Rel.", l10: "73.0", goal: "93.0", object: "86.0", spatial: "90.0", avg: "86.0", ...NEU },
-      { method: "OpenVLA", ctrl: "Rel.", l10: "55.0", goal: "79.2", object: "88.4", spatial: "84.7", avg: "76.8", ...NEU },
-      { method: "SmolVLA", ctrl: "Rel.", l10: "61.0", goal: "61.4", object: "66.0", spatial: "74.0", avg: "65.6", ...NEU },
-      { method: "GR00T N1.5 (baseline)", ctrl: "Rel.", l10: "72.0", goal: "75.0", object: "83.4", spatial: "82.0", avg: "78.1", ...NEU },
-      { method: "GR00T N1.5 + EquiActor", ctrl: "Rel.", l10: "82.6", goal: "88.0", object: "95.2", spatial: "98.2", avg: "91.0", ...NEU },
-      { method: "EquiVLA (ours)", ctrl: "Rel.", l10: "87.6", goal: "89.4", object: "98.0", spatial: "95.4", avg: "92.6", ...OURS },
-      { method: "GR00T N1.5 (baseline)", ctrl: "Abs.", l10: "52.0", goal: "55.2", object: "74.6", spatial: "68.6", avg: "62.6", ...NEU },
-      { method: "GR00T N1.5 + EquiActor", ctrl: "Abs.", l10: "63.0", goal: "70.0", object: "79.4", spatial: "82.0", avg: "73.6", ...NEU },
-      { method: "EquiVLA (ours)", ctrl: "Abs.", l10: "73.6", goal: "70.4", object: "83.0", spatial: "77.6", avg: "76.1", ...OURS }
-    ];
-
-    const calvinRows = [
-      { method: "HULC (multi-frame†)", t1: "88.9", t2: "73.3", t3: "58.7", t4: "47.5", t5: "38.3", avg: "3.07", ...NEU },
-      { method: "MoDE (multi-frame†)", t1: "97.1", t2: "92.5", t3: "87.9", t4: "83.5", t5: "77.9", avg: "4.39", ...NEU },
-      { method: "GR00T N1.5 (baseline)", t1: "89.0", t2: "79.2", t3: "68.7", t4: "59.4", t5: "48.5", avg: "3.45", ...NEU },
-      { method: "GR00T N1.5 + EquiActor", t1: "93.7", t2: "85.8", t3: "77.8", t4: "70.1", t5: "61.9", avg: "3.89", ...NEU },
-      { method: "EquiVLA (ours)", t1: "95.0", t2: "88.5", t3: "81.1", t4: "73.8", t5: "64.3", avg: "4.03", ...OURS }
-    ];
-
-    const rr = (task, base, ours, delta, opts = {}) => ({
-      task, base, ours, delta,
-      bg: opts.bg || "transparent",
-      border: opts.border || "1px solid #ececf0",
-      nameColor: opts.nameColor || "#4a5060",
-      weight: opts.weight || "400",
-      oursWeight: opts.oursWeight || "600",
-      deltaColor: opts.deltaColor || "#1f8a5b",
-      deltaWeight: opts.deltaWeight || "500"
-    });
-    const realRows = [
-      rr("Banana in Pot", "12/20 (60%)", "15/20 (75%)", "+15pp"),
-      rr("Block Storing", "9/20 (45%)", "11/20 (55%)", "+10pp"),
-      rr("House Building", "3/20 (15%)", "10/20 (50%)", "+35pp", { deltaWeight: "700" }),
-      rr("Letter Aligning", "13/20 (65%)", "19/20 (95%)", "+30pp", { deltaWeight: "700" }),
-      rr("Shorts Folding", "17/20 (85%)", "17/20 (85%)", "0pp", { deltaColor: "#9aa1b1" }),
-      rr("Average", "54%", "72%", "+18pp", { bg: "#eef4fe", border: "2px solid #2A6FDB", nameColor: "#15171d", weight: "700", oursWeight: "700", deltaWeight: "700" })
-    ];
-
-    const clips = [
-      { emoji: "🍌", title: "Banana in Pot", desc: "Pick a banana at arbitrary orientation and place it into the cooking pot." },
-      { emoji: "📦", title: "Block Storing", desc: "Pick a block from the table and store it inside a drawer." },
-      { emoji: "🏠", title: "House Building", desc: "Grasp a triangular roof block at the correct angle and stack it onto a block base." },
-      { emoji: "🔤", title: "Letter Aligning", desc: "Pick an I-shaped letter block at arbitrary orientations and align it precisely within a frame." },
-      { emoji: "👕", title: "Shorts Folding", desc: "Bimanual folding task — orientation-independent; used as the symmetry-absent control task." }
-    ];
-
-    return { liberoRows, calvinRows, realRows, clips };
-  }
-  componentDidMount() {
-    const run = () => {
-      if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise();
-      else setTimeout(run, 200);
-    };
-    run();
-  }
-  componentDidUpdate() {
-    if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise();
-  }
-}
-</script>
 </body>
 </html>
