@@ -432,39 +432,62 @@
         <figcaption style="text-align: center; font-size: 14px; color: #7b8294; margin-top: 18px;"><strong style="color: #4a5060;">Figure 5.</strong> Real-robot tasks on Mobile ALOHA. For each task the first and last frames show the initial and goal states. Success rates: EquiVLA (blue) vs. GR00T N1.5 over 20 trials.</figcaption>
       </figure>
 
-      <!-- Per-task video placeholders -->
-      <h3 style="font-family: 'Newsreader', serif; font-size: 20px; font-weight: 600; margin: 0 0 18px; color: #15171d;">Per-Task Videos</h3>
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
-        <figure style="margin: 0;">
-          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px dashed #c4cad6; background: #1d2027; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: #6b7180;">
-            <div style="font-size: 22px;">&#9658;</div>
-            <div style="font-size: 13px;">Banana in Pot</div>
-          </div>
-        </figure>
-        <figure style="margin: 0;">
-          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px dashed #c4cad6; background: #1d2027; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: #6b7180;">
-            <div style="font-size: 22px;">&#9658;</div>
-            <div style="font-size: 13px;">Block Storing</div>
-          </div>
-        </figure>
-        <figure style="margin: 0;">
-          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px dashed #c4cad6; background: #1d2027; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: #6b7180;">
-            <div style="font-size: 22px;">&#9658;</div>
-            <div style="font-size: 13px;">House Building</div>
-          </div>
-        </figure>
-        <figure style="margin: 0;">
-          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px dashed #c4cad6; background: #1d2027; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: #6b7180;">
-            <div style="font-size: 22px;">&#9658;</div>
-            <div style="font-size: 13px;">Letter Aligning</div>
-          </div>
-        </figure>
-        <figure style="margin: 0; grid-column: 1 / -1; max-width: calc(50% - 8px);">
-          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px dashed #c4cad6; background: #1d2027; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: #6b7180;">
-            <div style="font-size: 22px;">&#9658;</div>
-            <div style="font-size: 13px;">Shorts Folding</div>
-          </div>
-        </figure>
+      <!-- Per-task videos -->
+      <h3 style="font-family: 'Newsreader', serif; font-size: 20px; font-weight: 600; margin: 0 0 24px; color: #15171d;">Per-Task Videos</h3>
+
+      <!-- Banana in Pot -->
+      <div style="margin-bottom: 32px;">
+        <div style="font-size: 15px; font-weight: 600; color: #15171d; margin-bottom: 12px;">Banana in Pot</div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;">
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/banana_in_pot/episode_000030.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/banana_in_pot/episode_000031.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/banana_in_pot/episode_000032.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/banana_in_pot/episode_000033.mp4" type="video/mp4"></video>
+        </div>
+      </div>
+
+      <!-- Block Storing -->
+      <div style="margin-bottom: 32px;">
+        <div style="font-size: 15px; font-weight: 600; color: #15171d; margin-bottom: 12px;">Block Storing</div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;">
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/block_storing/episode_000019.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/block_storing/episode_000021.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/block_storing/episode_000027.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/block_storing/episode_000028.mp4" type="video/mp4"></video>
+        </div>
+      </div>
+
+      <!-- House Building -->
+      <div style="margin-bottom: 32px;">
+        <div style="font-size: 15px; font-weight: 600; color: #15171d; margin-bottom: 12px;">House Building</div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;">
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/house_building/episode_000081.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/house_building/episode_000084.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/house_building/episode_000088.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/house_building/episode_000090.mp4" type="video/mp4"></video>
+        </div>
+      </div>
+
+      <!-- Letter Aligning -->
+      <div style="margin-bottom: 32px;">
+        <div style="font-size: 15px; font-weight: 600; color: #15171d; margin-bottom: 12px;">Letter Aligning</div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;">
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/letter_aligning/episode_000047.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/letter_aligning/episode_000049.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/letter_aligning/episode_000051.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/letter_aligning/episode_000059.mp4" type="video/mp4"></video>
+        </div>
+      </div>
+
+      <!-- Shorts Folding -->
+      <div style="margin-bottom: 8px;">
+        <div style="font-size: 15px; font-weight: 600; color: #15171d; margin-bottom: 12px;">Shorts Folding</div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;">
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/shorts_folding/episode_000064.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/shorts_folding/episode_000065.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/shorts_folding/episode_000067.mp4" type="video/mp4"></video>
+          <video controls muted style="width: 100%; border-radius: 10px; display: block; background: #0a0b0d;"><source src="video/shorts_folding/episode_000074.mp4" type="video/mp4"></video>
+        </div>
       </div>
     </section>
 
